@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url("images/bookshelf1.jpeg");
+}
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 400px;
+
+    background: #fff;
+
+    transform: translate(-50%, -50%) perspective(2000px);
+    transform-style: preserve-3d;
+    box-shadow: inset 300px 0 50px rgba(0,0,0,.5),0 20px 100px rgba(0,0,0,.5);
+    transition: 1s; 
+}
+
+.card:hover {
+    transform: translate(-50%, -50%) perspective(2000px) rotate(-10deg);
+    box-shadow: inset 20px 0 50px rgba(0,0,0,.5),0 10px 100px rgba(0,0,0,.5);
+
+}
+
+.card:before {
+    content: '';
+    position: before;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #d7d8d2;
+    transform-origin: bottom;
+    transform: skewX(-45deg);
+}
+
+.card:after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 0px;
+    width: 5px;
+    height: 100%;
+    background: #eaeed7;
+
+    transform-origin: left;
+    transform: skewY(-45deg);
+}
+
+.card .imgBox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-origin: left;
+    transition: 1s; 
+}
+
+.card:hover .imgBox {
+    transform: rotateY(-135deg);
+}
+
+.card .details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    padding: 20px;
+    z-index: -1;
+}
+
+.wrapper {
+    width: 1170px;
+    margin: auto;
+}
+
+.nav-area {
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.nav-area li {
+    display: inline-block;
+}
+
+.nav-area li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: poppins; 
+    font-size: 14px;
+}
+
+.nav-area li a:hover {
+    background: #fff;
+    color: #333;
+}
